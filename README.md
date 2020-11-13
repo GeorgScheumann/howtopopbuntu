@@ -1,6 +1,7 @@
 # How to Popbuntu?
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://github.com/themagicalmammal/howtopopbuntu/blob/master/LICENSE)
 [![Maintenance](https://img.shields.io/badge/Maintained%3F-yes-green.svg)](https://github.com/themagicalmammal/howtopopbuntu/graphs/commit-activity)
+#### To see what my setup looks like, go [here](https://www.reddit.com/r/pop_os/comments/jswu9j/pop_os_punk_setup/).
 ###### This is done exclusively on Pop Os 20.10 but, this has been tested on Ubuntu & Voyager, this should work for every Ubuntu-based Distros.
 This is an extensive Guide on the set of things I use. This has been tested on my two computers, one of them is 7th Gen i5 with Samsung EVO SSD and the other one is a 3rd Gen i3. These tweaks are added based on my experience over six months using pop on them.
 
@@ -25,7 +26,7 @@ This is an extensive Guide on the set of things I use. This has been tested on m
 - **[Snap Vs Flatpak](https://github.com/themagicalmammal/howtopopbuntu#snap-vs-flatpak-package-managers-except-apt-dpkg)**
 - **[Browser](https://github.com/themagicalmammal/howtopopbuntu#browser) -> [Chrome](https://github.com/themagicalmammal/howtopopbuntu#1-chrome), [Vivaldi](https://github.com/themagicalmammal/howtopopbuntu#2-vivaldi), [Brave](https://github.com/themagicalmammal/howtopopbuntu#3-brave), [Opera](https://github.com/themagicalmammal/howtopopbuntu#4-opera), [Firefox](https://github.com/themagicalmammal/howtopopbuntu#1-firefox), [TOR](https://github.com/themagicalmammal/howtopopbuntu#2-tor), [Extensions](https://github.com/themagicalmammal/howtopopbuntu#extensions-i-use)**
 - **[Email Client](https://github.com/themagicalmammal/howtopopbuntu#email-client)-> [Evolution](https://github.com/themagicalmammal/howtopopbuntu#1-evolution), [Thunderbird](https://github.com/themagicalmammal/howtopopbuntu#2-thunderbird), [MailSpring](https://github.com/themagicalmammal/howtopopbuntu#3-mailspring)**
-- **[Video Tools](https://github.com/themagicalmammal/howtopopbuntu#video-tools) -> [VLC](https://github.com/themagicalmammal/howtopopbuntu#1-vlc), [OBS Studio](https://github.com/themagicalmammal/howtopopbuntu#2-obs-studio)**
+- **[Video Tools](https://github.com/themagicalmammal/howtopopbuntu#video-tools) -> [VLC](https://github.com/themagicalmammal/howtopopbuntu#1-vlc), [OBS Studio](https://github.com/themagicalmammal/howtopopbuntu#2-obs-studio), [Peek](https://github.com/themagicalmammal/howtopopbuntu#3-peek)**
 - **[Audio Tools](https://github.com/themagicalmammal/howtopopbuntu#audio-tools) -> [PulseAudio Controls](https://github.com/themagicalmammal/howtopopbuntu#1-pulseaudio-controls), [PulseEffects](https://github.com/themagicalmammal/howtopopbuntu#2-PulseEffects), [Audacity](https://github.com/themagicalmammal/howtopopbuntu#3-audacity), [Ardour](https://github.com/themagicalmammal/howtopopbuntu#4-ardour)**
 - **[Office](https://github.com/themagicalmammal/howtopopbuntu#office) -> [Free Office](https://github.com/themagicalmammal/howtopopbuntu#1-free-office), [WPS Office](https://github.com/themagicalmammal/howtopopbuntu#2-wps-office)**
 - **[Graphic tools](https://github.com/themagicalmammal/howtopopbuntu#graphic-tools) -> [GIMP](https://github.com/themagicalmammal/howtopopbuntu#1-gimp), [Krita](https://github.com/themagicalmammal/howtopopbuntu#2-krita), [Blender](https://github.com/themagicalmammal/howtopopbuntu#3-blender), [Inkscape](https://github.com/themagicalmammal/howtopopbuntu#4-inkscape)**
@@ -395,6 +396,14 @@ OBS Studio is software designed for capturing, compositing, encoding, recording,
 sudo apt install obs-studio -y
 ```
 
+#### 3. [Peek}(https://github.com/phw/peek)
+Peek is an recorder with with video recording, GIF recording and screenshot capabilities.
+```bash
+sudo add-apt-repository ppa:peek-developers/stable
+sudo apt update
+sudo apt install peek -y
+```
+
 ### Audio Tools
 #### 1. [PulseAudio Controls](https://www.freedesktop.org/wiki/Software/PulseAudio/)
 PulseAudio is an audio server. The audio in your apps passes through Pulse. So in that way, you can use several methods to handle these sounds ere you can hear them. It also optimizes the quality of your audio.
@@ -519,9 +528,17 @@ echo "deb http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sou
 sudo apt update && sudo apt install spotify-client -y
 ```
 If you do not like ads, you can get [Ad-free Spotify](https://github.com/abba23/spotify-adblock-linux). <br />
-To install themes for spotify, go [here](https://github.com/khanhas/spicetify-cli) to get the themes, go [here](https://github.com/morpheusthewhite/spicetify-themes). If you get troubles installing spicetify-cli use this [script](https://github.com/themagicalmammal/howtopopbuntu/blob/master/spicetify.sh).<br />
+To install themes for spotify, go [here](https://github.com/khanhas/spicetify-cli) to get the themes, go [here](https://github.com/morpheusthewhite/spicetify-themes). <br />
+If you get troubles installing spicetify-cli use, do this -
+1. Get the latest [spicetify script](https://github.com/themagicalmammal/howtopopbuntu/releases/download/Spicetify/spicetify.sh)
+2. Then follow these commands,
+```bash
+chmod 775 $(xdg-user-dir DOWNLOAD)/spicetify.sh
+$(xdg-user-dir DOWNLOAD)/spicetify.sh
+```
+<br /> <br />
+![spotify-adfree](https://github.com/themagicalmammal/howtopopbuntu/blob/master/Screenshots/spotify-adfree.png) <br /> 
 **Ad-free Spotify may get buggy from time to time.**  <br />  <br />
-![spotify-adfree](https://github.com/themagicalmammal/howtopopbuntu/blob/master/Screenshots/spotify-adfree.png) <br />  <br />
 
 #### 2. Steam for Gaming
 ```bash
@@ -1044,7 +1061,11 @@ Currently I am using Linotte Font for system & MonoFur for my terminal. <br />
 To change your font, go to gnome-tweaks then to Fonts. <br /> <br />
 ![customfont](https://github.com/themagicalmammal/howtopopbuntu/blob/master/Screenshots/customfont.png)
 To change Terminal font, Go to preferences, then to profiles, then in custom font select MonoFur. <br />
-To get my fonts, go [here](https://github.com/themagicalmammal/howtopopbuntu/blob/master/.local/share/fonts.md).
+To get my fonts, go [here](https://github.com/themagicalmammal/howtopopbuntu/blob/master/.local/share/fonts.md). <br />
+If the font doesn't show, you can try clearing the font cache <br />
+```bash
+fc-cache -f -v
+```
 
 ### Customization
 #### 1. We need to add gnome-shell-integration for Chrome.
@@ -1059,6 +1080,7 @@ To get my fonts, go [here](https://github.com/themagicalmammal/howtopopbuntu/blo
 - [Compiz windows effect](https://extensions.gnome.org/extension/3210/compiz-windows-effect/)
 - [Activities Configurator](https://extensions.gnome.org/extension/358/activities-configurator/)
 - [Remove Accessibility](https://extensions.gnome.org/extension/112/remove-accesibility/)
+- [Showtime - Desktop Widget](https://extensions.gnome.org/extension/1429/showtime/)
 - [Dash to Dock](https://extensions.gnome.org/extension/307/dash-to-dock/) <br /> <br />
 ![dashtodock](https://github.com/themagicalmammal/howtopopbuntu/blob/master/Screenshots/dashtodock.png)
 - [Dash to Panel](https://extensions.gnome.org/extension/1160/dash-to-panel/) <br /> <br />
